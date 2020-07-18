@@ -1,0 +1,16 @@
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+test/cypress/videos/
+test/cypress/screenshots/
+test/cypress/integration/examples
+
+*.sublime*
+
+.env

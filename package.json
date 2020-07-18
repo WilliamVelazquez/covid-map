@@ -1,0 +1,66 @@
+{
+  "name": "covid-map",
+  "version": "1.0.0",
+  "description": "Map to view COVID-19 cases on Mexico, developed with ReactJs.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open --config ./webpack.dev.config.js",
+    "prod": "webpack -p --env.NODE_ENV=production --env.production --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WilliamVelazquez/covid-map.git"
+  },
+  "keywords": [
+    "React",
+    "Maps",
+    "COVID",
+    "Luxelare",
+    "WilliamVelazquez"
+  ],
+  "author": "William Velazquez <william.velazquez.a@gmail.com> (https://twitter.com/WilliamVlazquez)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WilliamVelazquez/covid-map/issues"
+  },
+  "homepage": "https://github.com/WilliamVelazquez/covid-map#readme",
+  "dependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "styled-components": "5.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.10.5",
+    "@babel/core": "7.10.5",
+    "@babel/plugin-proposal-class-properties": "7.10.4",
+    "@babel/preset-env": "7.10.4",
+    "@babel/preset-react": "7.10.4",
+    "@babel/register": "7.10.5",
+    "babel-eslint": "10.1.0",
+    "babel-loader": "8.1.0",
+    "babel-plugin-module-resolver": "4.0.0",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-object-assign": "6.22.0",
+    "babel-polyfill": "6.26.0",
+    "clean-webpack-plugin": "3.0.0",
+    "css-loader": "3.6.0",
+    "dotenv": "8.2.0",
+    "eslint": "7.4.0",
+    "eslint-config-airbnb": "18.2.0",
+    "eslint-loader": "4.0.2",
+    "eslint-plugin-import": "2.22.0",
+    "eslint-plugin-jsx-a11y": "6.3.1",
+    "eslint-plugin-react": "7.20.3",
+    "file-loader": "6.0.0",
+    "html-webpack-plugin": "4.3.0",
+    "mini-css-extract-plugin": "0.9.0",
+    "optimize-css-assets-webpack-plugin": "5.0.3",
+    "react-hot-loader": "4.12.21",
+    "style-loader": "1.2.1",
+    "svg-url-loader": "6.0.0",
+    "uglifyjs-webpack-plugin": "2.2.0",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
+  }
+}
