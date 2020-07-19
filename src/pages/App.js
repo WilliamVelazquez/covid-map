@@ -5,8 +5,6 @@ import useToggle from '../hooks/useToggle';
 import CubeLoader from '../components/CubeLoader';
 import Layout from '../components/Layout';
 
-require('dotenv').config();
-
 const App = () => {
   const [isLoading, toogleLoading, setIsLoading] = useToggle(false);
 
@@ -29,20 +27,32 @@ const App = () => {
         throw Error(response.msg);
       } else {
         const json = await response.json();
-        //DEBUG-->
-        console.log('JSON:', json);
+        //DEBUG--> console.log('JSON:', json);
+        const sum = {};
+        const mres = {};
+        json.map((item) => {
+          let s = sum[item.nom_ent];
+          if (s === undefined) s = 0;
+          sum[item.nom_ent] = s + 1;
+
+          let r = mres[item.resultado];
+          if (r === undefined) r = 0;
+          mres[item.resultado] = r + 1;
+        });
+        console.log('Estados', sum);
+        console.log('Status', mres);
+        console.log(`Total de casos: ${json.length}`);
         setIsLoading(false);
       }
 
     } catch (error) {
-        setIsLoading(false);
-        console.log('Catch:', error);
+      setIsLoading(false);
+      console.log('Catch:', error);
     }
   };
 
   useEffect(() => {
-    const URL = process.env.API_URL;
-    getData(URL);
+    getData('/api');
   }, []);
 
   return (

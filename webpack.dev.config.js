@@ -19,6 +19,9 @@ module.exports = {
   },
   devServer: {
     port: process.env.PORT || 9000,
+    proxy: {
+      '/api': process.env.API_URL || 'http://localhost:8000',
+    },
   },
   node: {
     fs: 'empty',
