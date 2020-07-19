@@ -5,11 +5,14 @@ import useToggle from '../hooks/useToggle';
 import CubeLoader from '../components/CubeLoader';
 import Layout from '../components/Layout';
 
+require('dotenv').config();
+
 const App = () => {
   const [isLoading, toogleLoading, setIsLoading] = useToggle(false);
 
-  const getData = async (service = 'http://localhost:8000/api', methodType = 'GET', headerAccept = 'application/json', headerContentType = 'application/json') => {
+  const getData = async (service = '', methodType = 'GET', headerAccept = 'application/json', headerContentType = 'application/json') => {
     try {
+      console.log('service--->', service);
       const requestConfig = {
         method: methodType,
         headers: {
@@ -17,7 +20,7 @@ const App = () => {
           'Content-Type': headerContentType,
         },
       };
-
+      setIsLoading(true);
       const response = await fetch(service, requestConfig);
 
       if (response.status !== 200) {
@@ -28,16 +31,19 @@ const App = () => {
         const json = await response.json();
         //DEBUG-->
         console.log('JSON:', json);
+        setIsLoading(false);
       }
 
     } catch (error) {
-      console.log('Catch:', error);
+        setIsLoading(false);
+        console.log('Catch:', error);
     }
   };
 
-  // useEffect(() => {
-  //   getData();
-  // }, []);
+  useEffect(() => {
+    const URL = process.env.API_URL;
+    getData(URL);
+  }, []);
 
   return (
     <Layout>

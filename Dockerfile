@@ -3,7 +3,12 @@ FROM node:alpine as build
 
 WORKDIR /app
 
+ENV API_URL=http://localhost:5000/api
+
 COPY . .
+
+RUN npm install
+
 RUN npm run build
 
 # Deploy App to NGINX

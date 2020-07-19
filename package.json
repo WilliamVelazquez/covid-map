@@ -56,13 +56,14 @@
     "mini-css-extract-plugin": "0.9.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "react-hot-loader": "4.12.21",
+    "serialize-javascript": ">=2.1.1",
     "style-loader": "1.2.1",
     "svg-url-loader": "6.0.0",
+    "terser-webpack-plugin": "3.0.7",
     "uglifyjs-webpack-plugin": "2.2.0",
     "url-loader": "4.1.0",
     "webpack": "4.43.0",
     "webpack-cli": "3.3.12",
-    "webpack-dev-server": "3.11.0",
-    "serialize-javascript": ">=2.1.1"
+    "webpack-dev-server": "3.11.0"
   }
 }
