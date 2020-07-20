@@ -98,6 +98,12 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.(json|geojson)$/,
+        use: {
+          loader: 'json-loader',
+        },
+      },
     ],
   },
   plugins,

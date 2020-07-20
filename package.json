@@ -26,8 +26,10 @@
   "homepage": "https://github.com/WilliamVelazquez/covid-map#readme",
   "dependencies": {
     "http-proxy-middleware": "1.0.5",
+    "leaflet": "1.6.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-leaflet": "2.7.0",
     "styled-components": "5.1.1"
   },
   "devDependencies": {
@@ -54,6 +56,7 @@
     "eslint-plugin-react": "7.20.3",
     "file-loader": "6.0.0",
     "html-webpack-plugin": "4.3.0",
+    "json-loader": "0.5.7",
     "mini-css-extract-plugin": "0.9.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "react-hot-loader": "4.12.21",
