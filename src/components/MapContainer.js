@@ -3,12 +3,13 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { Map as LeafletMap, GeoJSON } from 'react-leaflet';
-import { numberWithCommas } from '../utils/validations';
+import { getColor, numberWithCommas } from '../utils/validations';
 
 import ClientPortal from './ClientPortal';
 import mexicoStates from '../utils/states.geojson';
 import PopupContent from './PopupContent';
 import CountBoard from './CountBoard';
+import MapInfoLegend from './MapInfoLegend';
 
 const MapContainer = (props) => {
   const { data = [] } = props;
@@ -51,11 +52,22 @@ const MapContainer = (props) => {
   // const mexicoCityPosition = [19.451054, -99.125519];
 
   const geojsonMarkerOptions = {
-    fillColor: '#017faf', //'#85C1E9',
+    // fillColor: getColor(), //'#017faf', //'#85C1E9',
     color: '#fff',
     weight: 0.8,
     opacity: 1,
-    fillOpacity: 0.6,
+    fillOpacity: 0.8,
+  };
+
+  const styleOpts = (feature) => {
+    // console.log(feature);
+    const stateName = feature.properties.state_name;
+    const density = (statesData[stateName].Females.confirmados + statesData[stateName].Males.confirmados);
+    // console.log('density-->', density);
+    return {
+      fillColor: getColor(density),
+      ...geojsonMarkerOptions,
+    };
   };
 
   const handleEachFeature = (feature = {}, layer) => {
@@ -82,9 +94,10 @@ const MapContainer = (props) => {
     />
     <ClientPortal selector='#map-container'>
       <LeafletMap center={mexicoPosition} zoom={5}>
+        <MapInfoLegend />
         <GeoJSON
           data={mexicoStates}
-          style={geojsonMarkerOptions}
+          style={styleOpts}
           onEachFeature={handleEachFeature}
         />
       </LeafletMap>
