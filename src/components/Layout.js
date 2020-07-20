@@ -5,7 +5,7 @@ import Header from './Header';
 
 const Content = styled.div`
   padding: 1em;
-  padding-top: 100px;
+  padding-top: 80px;
 `;
 
 const Layout = (props) => {

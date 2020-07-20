@@ -25,9 +25,9 @@ const InfoContainer = styled.div`
 	grid-template-columns: 1fr 1fr;
 `;
 const Healthy = styled.div`
-  color: #01af66;
+  color: #017faf;
   padding: 0px 3px;
-  border: 2px solid #01af66;
+  border: 2px solid #017faf;
   /* color: #39b923;
   border: 2px solid #39b923; */
 `;

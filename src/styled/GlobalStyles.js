@@ -13,6 +13,7 @@ const GlobalStyles = createGlobalStyle`
   #map-container , .leaflet-container {
     width:100%;
     height: 480px;
+    background: #fff;
   }
 `;
 
