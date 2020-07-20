@@ -10,6 +10,10 @@ const GlobalStyles = createGlobalStyle`
   button {
     font-family: 'Poppins', sans-serif, system-ui;
   }
+  #map-container , .leaflet-container {
+    width:100%;
+    height: 480px;
+  }
 `;
 
 export default GlobalStyles;
