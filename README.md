@@ -30,6 +30,7 @@ docker run --name covid-api --net=covidnet -it --rm -p 8000:8000 covid-api
 
 #### Frontend
 *For running local frontend with Hot Reloading
+Require NodeJs
 ```
 npm install
 npm run dev
@@ -108,6 +109,15 @@ docker swarm leave --force
 * **William Velazquez** - [WilliamVelazquez](https://williamvelazquez.com/)
 
 If you want to know about the insights [click here!](https://github.com/WilliamVelazquez/covid-map/pulse/monthly)
+
+
+📷 Screenshots
+
+![Map](./.readme-static/map.png)
+![Data](./.readme-static/data.png)
+![Dashboard](./.readme-static/traefik-dashboard.png)
+![Routers](./.readme-static/traefik-routers.png)
+![Services](./.readme-static/traefik-services.png)
 
 
 ## 📄License
