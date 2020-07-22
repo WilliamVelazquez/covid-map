@@ -1,0 +1,39 @@
+version: '3.3'
+services:
+  traefik:
+    image: "traefik:v2.2"
+    container_name: "traefik"
+    command:
+      #- "--log.level=DEBUG"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "5000:80"
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+  covid-frontend:
+    image: covid-frontend:latest
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.covid-frontend.rule=Host(`localhost`)"
+      - "traefik.http.routers.covid-frontend.entrypoints=web"
+      - traefik.http.services.covid-frontend.loadbalancer.server.port=9000
+    depends_on:
+      - traefik
+  covid-api:
+    image: covid-api:latest
+    labels:
+      - "traefik.enable=true"
+      # - "traefik.http.routers.covid-api.rule=Host(`localhost`)"
+      - "traefik.http.routers.covid-api.entrypoints=web"
+      - traefik.http.routers.covid-api.rule=PathPrefix(`/api`)
+      - traefik.http.services.covid-api.loadbalancer.server.port=8000
+    depends_on:
+      - traefik
+
+networks:
+  traefik-public:
+    external: true
