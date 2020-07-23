@@ -35,6 +35,10 @@ const GlobalStyles = createGlobalStyle`
     opacity: 0.7;
     margin-right: 8px;
   }
+  .help-text{
+    margin: 0;
+    color: #555;
+  }
 `;
 
 export default GlobalStyles;

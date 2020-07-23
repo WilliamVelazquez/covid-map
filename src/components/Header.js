@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import LOGO from '../assets/images/logo.png';
 
 const Container = styled.header`
-  padding: 1em;
+  padding: 0.5em;
   position: fixed;
   top: 0;
   left: 0;

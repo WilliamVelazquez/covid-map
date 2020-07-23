@@ -12,7 +12,7 @@ const App = () => {
 
   const getData = async (service = '', methodType = 'GET', headerAccept = 'application/json', headerContentType = 'application/json') => {
     try {
-      console.log('service--->', service);
+      // console.log('service--->', service);
       const requestConfig = {
         method: methodType,
         headers: {
