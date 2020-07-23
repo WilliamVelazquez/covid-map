@@ -69,6 +69,8 @@ docker run --name covid-proxy --net=covidnet --rm -p 5000:5000 covid-proxy
 
 📌**Development as Production Environment**
 
+***Note: For running one of the following options you must create the docker images first (you can find the command to generate each image on the Development Environment section). The proxy image is not necessary.**
+
 #### Docker Compose
 Creating cluster, network and running the containers
 ```
