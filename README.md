@@ -24,6 +24,9 @@ docker run --name covid-api --net=covidnet -it --rm -p 8000:8000 covid-api
 ```
 >Run over the Server Folder inside the Backend Project
 
+>Add the parameter **source='Serendipia'** to the **CovidMX** function on the file **CovidView.py** so the line looks like the following:  
+```covid_dge_data = CovidMX(source='Serendipia').get_data()```
+
 >Uncomment RUN echo "ALLOWED_HOSTS = ['*']" >> covid_api/settings.py
 
 >This project runs on **http://localhost:8000**
