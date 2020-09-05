@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: covid-proxy
-          image: covid-proxy
+          image: williamvelazquez/covid-proxy:initial
           ports:
             - containerPort: 5000
           imagePullPolicy: Never

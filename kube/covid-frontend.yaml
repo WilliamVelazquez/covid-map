@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: covid-frontend
-          image: covid-frontend
+          image: williamvelazquez/covid-frontend:initial
           ports:
             - containerPort: 9000
           env:

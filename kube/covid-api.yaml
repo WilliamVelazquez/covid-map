@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: covid-api
-          image: covid-api
+          image: williamvelazquez/covid-api:initial
           ports:
             - containerPort: 8000
           imagePullPolicy: Never
